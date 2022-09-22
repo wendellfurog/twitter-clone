@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/Post.css'
 import { Avatar } from '@material-ui/core';
-import avatar from '../avatar.jpg';
+import me from '../me.jpg';
 import meme from '../meme.jpg';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
@@ -16,28 +16,28 @@ function Post({
   verified,
   text,
   image,
-  timestamp
+  avatar
 }) {
   return (
     <div className='post'>
       <div className='post__avatar'>
-        <Avatar src={avatar} alt="my pic"/>
+        <Avatar src={avatar} alt=''/>
       </div>
       <div className='post__body'>
         <div className='post__header'>
           <div className='post__headerText'>
             <h3>
-              Wendell Furog{" "}
+              {displayName}{" "}
               <span className='post__headerSpecial'>
-                <VerifiedIcon className='post__badge' /> @wendellfurog_
+                {verified && <VerifiedIcon className='post__badge' />} @{username}
               </span>
             </h3>
           </div>
           <div className='post__headerDescription'>
-            <p>Lorem Ipsum is simply dummy text of the printing.</p>
+            <p>{text}</p>
           </div>
         </div>
-        <img src={meme} alt='meme pic' />
+        <img src={image} alt='' />
         <div className='post__footer'>
           <ChatBubbleOutlineIcon fontSize='small' />
           <RepeatIcon fontSize='small' />
