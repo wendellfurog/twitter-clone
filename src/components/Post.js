@@ -10,10 +10,6 @@ import PublishIcon from '@mui/icons-material/Publish';
 
 const Post = forwardRef(
   ({ displayName, username, verified, text, image, avatar }, ref) => {
-  // const truncateString = (string = '', maxLength = 100) => 
-  // string.length > maxLength 
-  //   ? `${string.substring(0, maxLength)}…`
-  //   : string
 
   return (
       <div className='post' ref={ref}>
